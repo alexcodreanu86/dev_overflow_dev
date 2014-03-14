@@ -13,11 +13,11 @@
       <li><%= link_to "MEME DO", root_path %></li>
       <% unless current_user %>
       <li><%= link_to "Sign Up", new_user_registration_path %></li>
-      <li><%= link_to "Sign In", new_user_session_path %></li>
+      <li><%= link_to icon('sign-in'), new_user_session_path %></li>
       <% else %>
-      <li><%= link_to "#{current_user.first_name}'s Profile", user_path(current_user) %></li>
-      <li><%= link_to "New Post",  new_post_path %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+      <li><%= link_to icon('user'), user_path(current_user) %></li>
+      <li><%= link_to icon('pencil-square'),  new_post_path %></li>
+      <li><%= link_to icon('sign-out'), destroy_user_session_path, :method => :delete %></li>
       <% end %>
 
     </ul>
@@ -32,7 +32,8 @@
   </div>
   <footer>
       <span><strike>Alex - Jess - Joe - Tom &copy; Badassery Inc.</strike></span>
-      <p><span>Dustin - Danny - Chris - Jack &copy; Taco Corp.</span></p>
+      <p><span><strike>Dustin - Danny - Chris - Jack &copy; Taco Corp.</strike></span></p>
+      <span>Ales - Jess - Joe - Tom &copy; Baddassery Inc. <h5>in association with America Corp.</h5></span>
   </footer>
 </body>
 </html>

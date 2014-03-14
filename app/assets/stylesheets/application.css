@@ -10,10 +10,16 @@
  *
  *= require_self
  *= require_tree .
+ *= require font-awesome
  */
+
+
 #favorite_star{
-  color: red;
-  font-size: 40px;
+  color: orange;
+  font-size:2.5em;
+  padding: 3px 7px;
+  border:1px solid black;
+  border-radius:30px;
 }
 
 *{
@@ -56,7 +62,6 @@ nav ul li{
   padding: 10px;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  border-right: solid 1px #4ea3bd;
 }
 
 nav ul li:first-child a{
@@ -91,7 +96,7 @@ footer{
 }
 
 footer{
-  height: 40px;
+  height: 3%;
   background-color: #333;
   border-bottom: solid 1px #333;
   color: #FFF;
@@ -99,4 +104,19 @@ footer{
   text-align:center;
 }
 
+.content-block {
+  background-image: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+}
+
+.sub-container {
+  width:10%;
+  display:inline-block;
+  padding:1em;
+}
+
+.text {
+  width:80%;
+  display:inline-block;
+
+}
 

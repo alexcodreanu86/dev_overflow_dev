@@ -1,4 +1,4 @@
-<h1><%= @tag.name %></h1>
+<h1><%= icon('tags')%><%= @tag.name %></h1>
 
 <% @posts.each do |post| %>
   <h3><%= link_to "#{post.subject}", post_path(post) %></h3>
