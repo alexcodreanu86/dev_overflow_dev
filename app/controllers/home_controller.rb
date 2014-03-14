@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @user = current_user
-    @posts = Post.first(10)
+    @posts = Post.all.sort { |post| post.upvotes.size - post.downvotes.size }.reverse
+
   end
 end

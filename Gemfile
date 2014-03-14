@@ -31,6 +31,8 @@ gem 'devise'
 
 gem 'sprockets', '2.11.0'
 
+gem 'font-awesome-sass'
+
 # Voting system for up and down voting in active record
 gem 'acts_as_votable', '~> 0.8.0'
 

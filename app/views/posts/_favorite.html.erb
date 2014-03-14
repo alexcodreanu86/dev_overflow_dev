@@ -1,25 +1,26 @@
-<div class="favorite">
-  <div class="votecell">
-    <%= link_to "^", answer_upvote_path(@favorite) %><br>
-    <%= @favorite.upvotes.size - @favorite.downvotes.size %><br>
-    <%= link_to "v", answer_downvote_path(@favorite) %>
+<div class="content-block">
+  <div class="sub-container">
+    <div class="votecell">
+      <%= link_to icon("thumbs-o-up"), answer_upvote_path(@favorite) %><br>
+      <%= @favorite.upvotes.size - @favorite.downvotes.size %>
+      <span id="favorite_star"><%= icon('star')%></span><br>
+      <%= link_to icon("thumbs-o-down"), answer_downvote_path(@favorite) %>
+    </div>
+
+
   </div>
 
-  <div class="star">
-    <span id="favorite_star">"THIS IS A HUGE STAR" </span>
-  </div>
-
-  <div class="answer">
+  <div class="text">
     <p><%= @favorite.body %></p>
     <p><%= @favorite.updated_at.to_s[0..9] %> | <%= link_to "#{@favorite.user.first_name} #{@favorite.user.last_name}", user_path(@favorite.user) %>
     <% if current_user == @favorite.user %>
-      | <%= link_to "Edit Answer", edit_post_answer_path(@favorite.post, @favorite) %>
-        <%= link_to 'Add Comment', new_answer_comment_path(@favorite) %>
+      | <%= link_to icon('pencil-square-o'), edit_post_answer_path(@favorite.post, @favorite) %>
+        <%= link_to icon('comment'), new_answer_comment_path(@favorite) %>
       </p>
 
       <div class="comment">
         <% @favorite.comments.each do |comment| %>
-          <%= comment.body %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to "Delete", delete_comment_path(comment), method: :delete %> <% end %>
+          <%= comment.body %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %><br> <% end %>
         <% end %>
       </div>
     <% end %>
