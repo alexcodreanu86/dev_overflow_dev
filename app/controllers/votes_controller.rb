@@ -1,8 +1,10 @@
+include VoteHelper
+
 class VotesController < ApplicationController 
   def upvote
     if current_user
       @voted, @post = voted_element_and_post
-      @voted.liked_by current_user
+      determine_vote(args = {voted: @voted, post: @post, type: "up"})
       redirect_to post_path(@post)
     else
       flash[:alert]="You need to be signed in to vote!!!" 
@@ -13,7 +15,7 @@ class VotesController < ApplicationController
   def downvote
     if current_user
       @voted, @post = voted_element_and_post
-      @voted.downvote_from current_user
+      determine_vote(args = {voted: @voted, post: @post, type: "down"})
       redirect_to post_path(@post)
     else
       flash[:alert]="You need to be signed in to vote!!!" 
