@@ -23,8 +23,9 @@
     </ul>
   </nav>
   <div id="wrapper">
-    <% if notice || alert %>
+    <% if notice  %>
       <p id="notice"><%= notice %></p>
+    <% elsif alert %>
       <p id="alert"><%= alert %></p>
     <% end %>
     <%= yield %>

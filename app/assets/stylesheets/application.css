@@ -13,13 +13,32 @@
  *= require font-awesome
  */
 
+ body {
+  font-size:1em;
+  font-family:sans-serif;
+ }
+
+ a {
+  color: #555;
+ }
+
+ a:hover {
+  color: #330000;
+ }
+
+ ul li{
+  list-style: none;
+ }
 
 #favorite_star{
-  color: orange;
-  font-size:2.5em;
+  color: #66f;
+  font-size:1.75em;
   padding: 3px 7px;
-  border:1px solid black;
-  border-radius:30px;
+}
+
+#favorite_star i.fa:hover{
+  color: #292966;
+  font-size: inherit;
 }
 
 *{
@@ -31,18 +50,19 @@
   display: block;
   width: 100%;
   height: 30px;
-  font-family: Terminus,Consolas,Profont,"Courier New",Terminal,monospace;
+  font-family: 'Lato', sans-serif;
+  letter-spacing:1px;
   text-align:center;
   padding-top: 10px;
   color: #FFF;
 }
 
 #notice{
-  background-color: #474632;
+  background-color: #3d3d99;
 }
 
 #alert{
-  background-color: #473232;
+  background-color: #600;
 }
 
 nav {
@@ -52,9 +72,6 @@ nav {
 -webkit-box-shadow: inset 0 -10px 10px -10px #000000;
 }
 
-/*nav ul li{
-
-}*/
 
 nav ul li{
   color: #FFF;
@@ -68,14 +85,13 @@ nav ul li:first-child a{
   color: #FFF;
   font-size:20px;
   font-weight: 900;
-  /*padding: 6px 10px 9px;*/
 }
 
 nav ul li a{
   color: #FFF;
   text-decoration: none;
   display: block;
-  /*border-right: solid 1px #4ea3bd;*/
+  font-size:1.5em;
 }
 
 nav ul li a:hover{
@@ -120,3 +136,10 @@ footer{
 
 }
 
+.comment{
+  font-size:0.8em;
+}
+
+.star-link:hover {
+  color:#66f;
+}

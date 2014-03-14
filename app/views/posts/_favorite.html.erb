@@ -20,7 +20,7 @@
 
       <div class="comment">
         <% @favorite.comments.each do |comment| %>
-          <%= comment.body %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %> <% end %>
+          <%= comment.body %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %><br> <% end %>
         <% end %>
       </div>
     <% end %>

@@ -12,10 +12,10 @@
     </div>
   </div>
   <div class="text">
-    <%= raw Rinku.auto_link(@post.body) %>
+    <%= raw Rinku.auto_link(@post.body) %><br><br>
     <div class="comment">
       <% @post.comments.each do |comment| %>
-        <%= raw Rinku.auto_link(comment.body) %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %> <% end %>
+        <%= raw Rinku.auto_link(comment.body) %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %><br> <% end %>
       <% end %>
     </div>
     <%= link_to icon('comment'), new_post_comment_path(@post) %>
@@ -53,7 +53,7 @@
 
         <div class="comment">
           <% answer.comments.each do |comment| %>
-            <%= raw Rinku.auto_link(comment.body) %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %> <% end %>
+            <%= raw Rinku.auto_link(comment.body) %> by: <%= "#{comment.user.first_name} #{comment.user.last_name}" %> <% if current_user == comment.user %> | <%= link_to icon('trash-o'), delete_comment_path(comment), method: :delete %><br> <% end %>
           <% end %>
         </div>
 
@@ -72,6 +72,6 @@
 <div class="tags">
   <%= icon('tags') %>
   <% @tags.each do |tag| %>
-    <%= link_to "#{tag.name}", tag_path(tag) %> |
+    &nbsp;<%= link_to "#{tag.name}", tag_path(tag) %>&nbsp;
   <% end %>
 </div>
